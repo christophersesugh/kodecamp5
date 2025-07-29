@@ -52,7 +52,7 @@ class Formatter {
 		}
 
 		formatted += `${this.colorize(statusSymbol, statusColor)} `
-		formatted += `${task.description}`
+		formatted += `${task.description} `
 
 		if (task.priority && task.priority !== 'medium') {
 			formatted += `${this.colorize(

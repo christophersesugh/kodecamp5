@@ -7,11 +7,16 @@ class AddCommand {
 		this.name = 'add'
 		this.description = 'Add a new task'
 		this.usage = 'add <description> [--priority <level>]'
+		this.examples = [
+			"add 'Complete project documentation'",
+			"add 'Review code changes' --priority high",
+			"add 'Update README' --priority low",
+		]
 	}
 
 	async execute(args, options = {}) {
 		try {
-			const argsValidation = validator.validateArgs(args, 1, 5)
+			const argsValidation = validator.validateArgs(args, 1, 1)
 			if (!argsValidation.isValid) {
 				console.error(formatter.formatError(argsValidation.error))
 				this.showUsage()

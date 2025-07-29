@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename)
 const mainPath = path.join(__dirname, '..', 'src', 'index.js')
 const child = spawn('node', [mainPath, ...process.argv.slice(2)], {
 	stdio: 'inherit',
-	shell: true,
+	cwd: process.cwd(),
 })
 
 child.on('close', code => {
@@ -18,6 +18,6 @@ child.on('close', code => {
 })
 
 child.on('error', error => {
-	console.error(`Error: ${error.message}`)
+	console.error(`Error running task-manager: ${error.message}`)
 	process.exit(1)
 })

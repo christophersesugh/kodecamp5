@@ -31,8 +31,8 @@ function processValue(number: number) {
 }
 
 //Contextual type inference
-let nums = [1, 2, 3, 4, 5, 'John']
-nums.forEach(num => {
+let numss = [1, 2, 3, 4, 5, 'John']
+numss.forEach(num => {
 	if (typeof num === 'number') {
 		console.log(num.toFixed(2))
 	} else {
